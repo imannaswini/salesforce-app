@@ -1,0 +1,91 @@
+<template>
+
+<lightning-card title="🚀 Ultimate Student ERP Dashboard">
+
+<div class="main">
+
+    <lightning-input
+        label="Search Student"
+        onchange={handleSearch}>
+    </lightning-input>
+
+    <div class="grid">
+
+        <div class="box blue">
+            <h2>{studentCount}</h2>
+            <p>Students</p>
+        </div>
+
+        <div class="box green">
+            <h2>{subjectCount}</h2>
+            <p>Subjects</p>
+        </div>
+
+        <div class="box orange">
+            <h2>{enrollmentCount}</h2>
+            <p>Enrollments</p>
+        </div>
+
+        <div class="box pink">
+            <h2>{marksCount}</h2>
+            <p>Marks</p>
+        </div>
+
+    </div>
+
+    <div class="section">
+        <h3>🏆 Top Performer</h3>
+        <p>Mannaswini P A - Grade A</p>
+    </div>
+
+    <div class="section">
+        <h3>📈 Performance Chart</h3>
+
+        <div class="bar">
+            <span>Students</span>
+            <div class="fill bluefill" style="width:80%"></div>
+        </div>
+
+        <div class="bar">
+            <span>Subjects</span>
+            <div class="fill greenfill" style="width:60%"></div>
+        </div>
+
+        <div class="bar">
+            <span>Enrollments</span>
+            <div class="fill orangefill" style="width:70%"></div>
+        </div>
+
+    </div>
+
+    <div class="section">
+        <h3>🚦 Attendance Status</h3>
+
+        <div class="lights">
+            <span class="light greenlight"></span> Good
+            <span class="light yellowlight"></span> Average
+            <span class="light redlight"></span> Low
+        </div>
+    </div>
+
+    <div class="buttons">
+
+        <lightning-button label="Students" variant="brand"></lightning-button>
+
+        <lightning-button label="Subjects" variant="success"></lightning-button>
+
+        <lightning-button label="Enrollments" variant="destructive"></lightning-button>
+
+    </div>
+
+    <div class="search-results">
+        <template for:each={students} for:item="stu">
+            <p key={stu.Id}>{stu.Name} - {stu.Email__c}</p>
+        </template>
+    </div>
+
+</div>
+
+</lightning-card>
+
+</template>
